@@ -2,11 +2,9 @@
 
 
 #include<iostream>
+	
 using namespace std;
 
-// Function to find the waiting time for all
-
-// processes
 
 void findWaitingTime(int processes[], int n,
 
