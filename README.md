@@ -1,16 +1,13 @@
 // C++ program for implementation of round robin scheduling
-
 #include<iostream>
 using namespace std;
 
-// Function to find the waiting time for all
-// processes
+// Function to find the waiting time for all processes
 void findWaitingTime(int processes[], int n,int bt[], int wt[], int quantum)
 {
 	
 	int rem_bt[n];
-	for (int i = 0 ; i < n ; i++)
-		rem_bt[i] = bt[i];
+	for (int i = 0 ; i < n ; i++)rem_bt[i] = bt[i];
 
 	int t = 0; // Current time
 
@@ -22,8 +19,7 @@ void findWaitingTime(int processes[], int n,int bt[], int wt[], int quantum)
 		
 		for (int i = 0 ; i < n; i++)
 		{
-			// If burst time of a process is greater than 0
-			// then only need to process further
+		
 			if (rem_bt[i] > 0)
 			{
 				done = false; 
@@ -57,8 +53,7 @@ void findWaitingTime(int processes[], int n,int bt[], int wt[], int quantum)
 void findTurnAroundTime(int processes[], int n,int bt[], int wt[], int tat[])
 {
 
-	for (int i = 0; i < n ; i++)
-		tat[i] = bt[i] + wt[i];
+	for (int i = 0; i < n ; i++)tat[i] = bt[i] + wt[i];
 }
 
 // Function to calculate average time
@@ -84,7 +79,7 @@ void findavgTime(int processes[], int n, int bt[],int quantum)
 		cout << " " << i+1 << "\t\t" << bt[i] <<"\t "<< wt[i] <<"\t\t " << tat[i] <<endl;
 	}
 
-	cout << "Average waiting time = "	<< (float)total_wt / (float)n;
+	cout << "Average waiting time = "<< (float)total_wt / (float)n;
 	cout << "\nAverage turn around time = "<< (float)total_tat / (float)n;
 }
 
