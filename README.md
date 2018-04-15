@@ -1,9 +1,15 @@
 // C++ program for implementation of round robin scheduling
+
+
 #include<iostream>
+
+
 using namespace std;
 
 // Function to find the waiting time for all processes
+
 void findWaitingTime(int processes[], int n,int bt[], int wt[], int quantum)
+
 {
 	
 	int rem_bt[n];
@@ -58,6 +64,7 @@ void findTurnAroundTime(int processes[], int n,int bt[], int wt[], int tat[])
 
 // Function to calculate average time
 void findavgTime(int processes[], int n, int bt[],int quantum)
+
 {
 	int wt[n], tat[n], total_wt = 0, total_tat = 0;
 
@@ -72,6 +79,7 @@ void findavgTime(int processes[], int n, int bt[],int quantum)
 
 	// Calculate total waiting time and total turn
 	// around time
+	
 	for (int i=0; i<n; i++)
 	{
 		total_wt = total_wt + wt[i];
@@ -79,6 +87,7 @@ void findavgTime(int processes[], int n, int bt[],int quantum)
 		cout << " " << i+1 << "\t\t" << bt[i] <<"\t "<< wt[i] <<"\t\t " << tat[i] <<endl;
 	}
 
+	
 	cout << "Average waiting time = "<< (float)total_wt / (float)n;
 	cout << "\nAverage turn around time = "<< (float)total_tat / (float)n;
 }
@@ -87,13 +96,16 @@ int main()
 {
 
 	// process id's
+	
 	int processes[] = { 1, 2, 3};
 	int n = sizeof processes / sizeof processes[0];
 
 	// Burst time of all processes
+	
 	int burst_time[] = {10, 5, 8};
 
 	// Time quantum
+	
 	int quantum = 2;
 	findavgTime(processes, n, burst_time, quantum);
 
